@@ -1,10 +1,10 @@
-package ArraysAndArrayLists;
+package PrefixSum;
 
-import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Scanner;
 
-public class InverseArray {
-    static void main(String[] args) {
+public class PrefixSumArray {
+    static void main() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter size of input array (n) : ");
         int n = scan.nextInt();
@@ -14,14 +14,12 @@ public class InverseArray {
             arr[i] = scan.nextInt();
         }
         System.out.println("Original Array : " + Arrays.toString(arr));
-        System.out.println("Inverse Array : " + Arrays.toString(inverse(arr)));
+        System.out.println("Prefix Sum Array : " + Arrays.toString(prefixSum(arr)));
     }
-    public static int[] inverse(int[] arr){
-        int[] ans = new int[arr.length];
-        for (int i = 0; i < ans.length; i++) {
-            int val = arr[i];
-            ans[val] = i;
+    static int[] prefixSum(int[] a){
+        for (int i = 1; i < a.length; i++) {
+            a[i] += a[i - 1];
         }
-        return ans;
+        return a;
     }
 }

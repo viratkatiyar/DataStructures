@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class RotateAnArray {
+    // in place rotation
     public static void main(String[] args) {
         System.out.println("Enter size(n) of array : ");
         Scanner scan = new Scanner(System.in);
@@ -26,11 +27,9 @@ public class RotateAnArray {
     }
     public static void reverse(int[] a, int i, int j){
         while(i < j){
-            int temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
-            i++;
-            j--;
+            a[i] = a[i] + a[j];
+            a[j] = a[i] - a[j];
+            a[i] = a[i++] - a[j--];
         }
     }
     public static void rotate(int[] a, int k){
