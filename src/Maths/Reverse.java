@@ -1,4 +1,4 @@
-package MathLeetCode;
+package Maths;
 
 public class Reverse {
     public static void main(String[] args) {
