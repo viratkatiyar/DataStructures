@@ -21,9 +21,9 @@ public class CeilOfANumber {
             } else if (target < arr[mid]) {
                 end = mid - 1;
             } else {
-                return mid;
+                return arr[mid];
             }
         }
-        return start;
+        return arr[start];
     }
 }

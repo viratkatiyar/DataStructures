@@ -20,9 +20,9 @@ public class FloorOfANumber {
             } else if (target < arr[mid]) {
                 end = mid - 1;
             } else {
-                return mid;
+                return arr[mid];
             }
         }
-        return end;
+        return arr[end];
     }
 }
